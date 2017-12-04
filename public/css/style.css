@@ -1,0 +1,76 @@
+@import url("reset.css");
+body {
+  font-family: Arial: sans-serif;
+  font-size: 14pt;
+  background-color: #00FF96;
+}
+h1 {
+  font-size: 2em;
+  color: white;
+  -webkit-text-stroke: 0.7px black;
+  text-align: center;
+  z-index: 2;
+}
+#welcome{
+  background-image:url(http://healthoholics.com/wp-content/uploads/2015/09/Blog-header-jan-6th.jpg);
+  background-size: contain;
+}
+h3 {
+  font-size: 1.25em;
+  margin-bottom:4pt;
+  margin-top: 6pt;
+}
+table {
+  width: 100%;
+}
+td {
+  text-align: center;
+}
+
+ol {
+  text-align: center;
+}
+
+.vegan {
+  color: #32FF00;
+}
+.gluten {
+  color: #FF4240;
+}
+
+section{
+  margin: 2%;
+  padding: 1%;
+  border: 2px dotted white;
+}
+
+#burgers{
+  background-color: #00B269;
+  color: white;
+}
+#drinks{
+  border-color: #8949CE;
+  color: #8949CE;
+  background-color: white;
+}
+
+#workView{
+  border-color: #00B269;
+  color: white;
+  background-color: #00B269;
+}
+
+#copy {
+  padding-bottom: 10px;
+}
+
+#buttonDiv {
+  text-align: center;
+}
+
+input:hover{
+  background-color: #23b200;
+}
+button, select, input:hover{
+  cursor: pointer;
+}

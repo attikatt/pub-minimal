@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Burgerlicious</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="data/menu.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="https://vuejs.org/js/vue.js"></script>
+  <script src="/vue/vue.js" defer> </script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="js/pub-main.js" defer></script>
+  <script src="js/ordering.js"defer></script>
+</head>
+<body>
+  <main id="orderSys">
+    <section id="welcome">
+    <h1> Welcome to Burgerlicious </h1>
+  </section>
+    <section id="burgers">
+      <h3> Burgers </h3>
+      <p> Choose one of our delicious burgers </p>
+      <table>
+          <tbody>
+            <form id="order">
+            <tr id="burgerspace">
+            </tr>
+            </form>
+            </table>
+          </section>
+          <section id="drinks">
+            <h3> Drinks </h3>
+            <p> Choose a refreshing drink </p>
+              <table>
+                <thead>
+                  <th> Soda </th>
+                  <th> Water </th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <img src=https://media.giphy.com/media/1iLEk2jJFKt6a8ec/giphy.gif alt="Coca Cola" height="150"> </td>
+                    <td> <img src=http://www.puttgarden.border-shop.dk/~/media/Scandlines/Bordershop/Images/ProductImages/Sodavand/Mineralvand/20155810024_A_Ramlosa_Mineralvand_33cl_ds_NY.ashx?bc=efc600&mh=211 alt="Ramlösa" width="140"> </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="sodaType" value="Classic Cola">
+                      Classic<br>
+                      <input type="radio" name="sodaType" value="Cola Light">
+                      Light <br>
+                    </td>
+                    <td>
+                      <label for="waterType"> Flavor options</label><br>
+                      <select id="waterType" name="orderOption">
+                        <option value="Ramlösa Natural"> Natural </option>
+                        <option value="Ramlösa Citrus"> Citrus </option>
+                        <option value="Ramlösa Kiwi"> Kiwi </option>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </section>
+          <div id="buttonDiv">
+          <button v-on:click="placeOrder()"id="sendButton" type="button"> Place your burger order! </button>
+        </div>
+        <section id="workView">
+          <h1>Väntande beställningar</h1>
+          <ol>
+            <li v-for="(item, key) in orders" v-if="!item.done">
+              {{ key }} : {{ item.orderItems.join(', ') }}
+            </li>
+          </ol>
+              <h1>Färdiga beställningar</h1>
+          <ol>
+            <li v-for="(item, key) in orders" v-if="item.done">
+              {{ key }} : {{ item.orderItems.join(', ') }}
+            </li>
+          </ol>
+        </section>
+          </main>
+          <footer>
+            <hr>
+            <p id="copy"> &copy; Created by Astrid </p>
+          </footer>
+        </body>
+        </html>
